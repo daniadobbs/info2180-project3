@@ -1,5 +1,7 @@
+<?= session_start(); ?>
+
 <!DOCTYPE html>
-<html>
+<html id="content">
     <head>
         <title>Home Page </title>
         <link type="text/css" rel="stylesheet" href="home.css">
@@ -9,7 +11,7 @@
     <body>
         <div id="header" class="center">
             <h1>My Cheapo</h1>
-            <button id="button">Logout</button>
+            <button id="logout">Logout</button>
         </div>
         <hr>
         <div id="messages">
@@ -25,7 +27,7 @@
             <div id="msg10" class="msg">10</div>
         </div>
         <div class="center">
-            <button id="button2">Create Message</button>
+            <button id="create">Create Message</button>
         </div>
     </body>
 </html>

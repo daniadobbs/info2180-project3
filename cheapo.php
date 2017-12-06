@@ -4,26 +4,27 @@ $host =getenv('IP');
 $username = getenv('C9_USER');
 $password='';
 $dbname ='CheapoMail';
-$pdo= new PDO("mysql:host=$host; dbname=$dbname", $username, $password);
+$conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
-$query="SELECT * FROM Users WHERE username = admin AND password = password123"
-$result= $conn-> query($query);
+$firstname = $_POST["firstname"];
+$lastname = $_POST["lastname"];
+$username = $_POST["username"];
 
+$pass = $_POST["password"];
 
+$newPass = password_hash($pass, PASSWORD_DEFAULT,['cost' => 12]);
 
-if($result -> $row > 0){
-    
-    while($row = $result->fetch_assoc()){
+ $query = "INSERT INTO Users(firstname, lastname, username, password) 
+        VALUES($firstname, $lastname, $username, $newPass)";
         
-        echo '<ul>'
-        
-    
-    echo'<li> Username ='.$row['username'].'password = '.$row['password'].'</li>';
+if($conn -> query($query) == TRUE){
+            echo "Successful!";
+        }else{
+            echo "Failed!";
+        };
 
-    }
-};
-echo '</ul>';
-
-
+echo "<link rel='styelsheet type='text/css' href='form.css'>";
+echo "<h1 style='color: indigo; text-align: center; background-color:orange'> Thank You for Registering!</h1>";
+echo "<body style='background-color:rgb(32,87,190)'></body> ";
 
 

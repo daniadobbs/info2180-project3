@@ -1,4 +1,4 @@
-html{
+body{
 	background: url("background3.jpg");
 	background-size: cover;
 }
@@ -15,11 +15,14 @@ h3{
 	font-family: "Montserrat",sans-serif;
 	text-align: center;
 	font-size: 30px;
+	color: white;
 }
 
-username password{
+.signin{
 	position: absolute;
 	float: left;
+	left: 505px;
+	top: 250px;
 }
 
 label{
@@ -38,13 +41,19 @@ button{
 	display: inline-block;
 	border-radius: 2px;
 	position: absolute;
-	cursor: pointer;
+	left: 670px;
+	top: 400px;
 }
 
 button:hover{
 	background-color: cornflowerblue;
 }
 
-.white{
-	color:white;
+input{
+	background-color: orchid;
+	padding: 5px 50px;
+}
+#errorMessage{
+	color: white;
+	text-align: center;
 }
